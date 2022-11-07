@@ -50,7 +50,7 @@
                                         </td>
                                         <td><strong>{{ row.getName() }}</strong></td>
                                         <td>{{ row.getBannerCategory() }}</td>
-                                        <td>{{ row.getCreatedAt() | localizeddate('medium', 'none', null, 'Asia/Ho_Chi_Minh', 'd/M/YYYY') }}</td>
+                                        <td>{{ row.getCreatedAt() | localizeddate('medium', 'none', null, 'Asia/Ho_Chi_Minh', 'd/M/yyyy') }}</td>
                                         <td>
                                             <div class="item-actions">
                                                 <a href="{{ path('admin_banner_edit', {id: row.id}) }}" class="btn-sm">

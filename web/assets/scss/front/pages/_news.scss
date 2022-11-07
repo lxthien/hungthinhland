@@ -217,20 +217,23 @@
 
 /* News Related
 ------------------------------------------------------------------------- */
+.wrapper-post-container {
+    .post-container {
+        .news {
+            .related-news {
+                h3 {
+                    font-size: 35px;
+                }
+            }
+        }
+    }
+}
+
 .related-news {
     h3 {
         position: relative;
         color: $primaryColor2;
-
-        &:before {
-            content: "";
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 250px;
-            height: 3px;
-            background: $primaryColor2;
-        }
+        font-size: 35px;
     }
 
     .row {

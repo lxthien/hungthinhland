@@ -14,7 +14,7 @@ use AppBundle\Entity\Banner;
 use AppBundle\Entity\Contact;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 
 class HomepageController extends Controller
@@ -117,20 +117,16 @@ class HomepageController extends Controller
         }
     }
 
-    public function formContactAction()
+    public function renderFormContactAction()
     {
         $contact = new Contact();
         
         $form = $this->createFormBuilder($contact)
             ->setAction($this->generateUrl('homepagecontact'))
             ->add('name', TextType::class, array('label' => 'Tên của bạn'))
+            ->add('email', EmailType::class, array('label' => 'Email của bạn'))
             ->add('phone', TextType::class, array('label' => 'Số điện thoại'))
-            ->add('contents', TextareaType::class, array(
-                'required' => true,
-                'label' => 'Nội dung',
-                'attr' => array('rows' => '7')
-            ))
-            ->add('send', ButtonType::class, array('label' => 'Đăng ký'))
+            ->add('send', ButtonType::class, array('label' => 'Gửi'))
             ->getForm();
 
         return $this->render('layout/contactFooter.html.twig', [
@@ -159,8 +155,8 @@ class HomepageController extends Controller
             
             $form = $this->createFormBuilder($contact)
                 ->add('name', TextType::class)
+                ->add('email', EmailType::class)
                 ->add('phone', TextType::class)
-                ->add('contents', TextareaType::class)
                 ->getForm();
 
             $form->handleRequest($request);
@@ -170,7 +166,26 @@ class HomepageController extends Controller
                 $em->persist($contact);
                 $em->flush();
 
-                if (null !== $contact->getId()) {   
+                if (null !== $contact->getId()) {
+                    $message = \Swift_Message::newInstance()
+                        ->setSubject($this->get('translator')->trans('comment.email.title', ['%siteName%' => $this->get('settings_manager')->get('siteName')]))
+                        ->setFrom(['hotro.xaydungminhduy@gmail.com' => $this->get('settings_manager')->get('siteName')])
+                        ->setTo($this->get('settings_manager')->get('emailContact'))
+                        ->setBody(
+                            $this->renderView(
+                                'Emails/contact.html.twig',
+                                array(
+                                    'name' => $request->request->get('form')['name'],
+                                    'email' => $request->request->get('form')['email'],
+                                    'phone' => $request->request->get('form')['phone']
+                                )
+                            ),
+                            'text/html'
+                        )
+                    ;
+
+                    $mailer->send($message);
+    
                     return new Response(
                         json_encode(
                             array(
@@ -184,7 +199,7 @@ class HomepageController extends Controller
                         json_encode(
                             array(
                                 'status'=>'error',
-                                'message' => 'Đã có lỗi xảy ra! Vui lòng thử lại sau'
+                                'message' => $this->get('translator')->trans('comment.have_a_problem_on_your_request')
                             )
                         )
                     );
@@ -194,7 +209,7 @@ class HomepageController extends Controller
                     json_encode(
                         array(
                             'status'=>'error',
-                            'message' => 'Đã có lỗi xảy ra! Vui lòng thử lại sau'
+                            'message' => $this->get('translator')->trans('comment.have_a_problem_on_your_request')
                         )
                     )
                 );

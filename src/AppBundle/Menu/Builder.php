@@ -20,84 +20,21 @@ class Builder implements ContainerAwareInterface
 
         $menu->addChild('Giới thiệu', [
             'route' => 'news_show',
-            'routeParameters' => ['slug' => 'gioi-thieu-ve-nam-viet-phat']
-        ])
-        ->setAttribute('class', 'dropdown')
-        ->setLinkAttribute('class', 'dropdown-toggle')
-        ->setLinkAttribute('data-toggle', 'dropdown')
-        ->setChildrenAttribute('class', 'dropdown-menu');
-
-        $menu['Giới thiệu']->addChild('Sơ đồ tổ chức', [
-            'route' => 'news_show',
-            'routeParameters' => ['slug' => 'so-do-to-chuc']
-        ]);
-        
-        $menu['Giới thiệu']->addChild('Về chúng tôi', [
-            'route' => 'news_show',
-            'routeParameters' => ['slug' => 'gioi-thieu-ve-nam-viet-phat']
+            'routeParameters' => ['slug' => 'gioi-thieu']
         ]);
 
-        $menu['Giới thiệu']->addChild('Tuyển dụng', [
-            'route' => 'news_show',
-            'routeParameters' => ['slug' => 'tuyen-dung']
-        ]);
-
-        $menu->addChild('Bảng giá', [
+        $menu->addChild('Dự án', [
             'route' => 'news_category',
-            'routeParameters' => ['level1' => 'bang-gia-xay-dung']
+            'routeParameters' => ['level1' => 'du-an']
         ]);
 
-        $menu->addChild('Thiết kế nhà', [
+        $menu->addChild('Tin tức', [
             'route' => 'news_category',
-            'routeParameters' => ['level1' => 'thiet-ke-nha']
-        ])
-        ->setAttribute('class', 'dropdown')
-        ->setLinkAttribute('class', 'dropdown-toggle')
-        ->setLinkAttribute('data-toggle', 'dropdown')
-        ->setChildrenAttribute('class', 'dropdown-menu');
-
-        $menu['Thiết kế nhà']->addChild('Thiết kế nhà phố', [
-            'route' => 'list_category',
-            'routeParameters' => ['level1' => 'thiet-ke-nha', 'level2' => 'thiet-ke-nha-pho']
-        ]);
-        
-        $menu['Thiết kế nhà']->addChild('Thiết kế biệt thự', [
-            'route' => 'list_category',
-            'routeParameters' => ['level1' => 'thiet-ke-nha', 'level2' => 'thiet-ke-biet-thu']
+            'routeParameters' => ['level1' => 'tin-tuc']
         ]);
 
-        $menu->addChild('Xây dựng nhà', [
-            'route' => 'news_category',
-            'routeParameters' => ['level1' => 'xay-dung']
-        ])
-        ->setAttribute('class', 'dropdown')
-        ->setLinkAttribute('class', 'dropdown-toggle')
-        ->setLinkAttribute('data-toggle', 'dropdown')
-        ->setChildrenAttribute('class', 'dropdown-menu');
-
-        $menu['Xây dựng nhà']->addChild('Xây nhà trọn gói', [
-            'route' => 'list_category',
-            'routeParameters' => ['level1' => 'xay-dung', 'level2' => 'xay-nha-tron-goi']
-        ]);
-
-        $menu['Xây dựng nhà']->addChild('Xây dựng phần thô', [
-            'route' => 'list_category',
-            'routeParameters' => ['level1' => 'xay-dung', 'level2' => 'xay-dung-phan-tho']
-        ]);
-
-        $menu['Xây dựng nhà']->addChild('Xây nhà biệt thự', [
-            'route' => 'list_category',
-            'routeParameters' => ['level1' => 'xay-dung', 'level2' => 'xay-nha-biet-thu']
-        ]);
-
-        $menu['Xây dựng nhà']->addChild('Xây nhà cấp 4', [
-            'route' => 'list_category',
-            'routeParameters' => ['level1' => 'xay-dung', 'level2' => 'xay-nha-cap-4']
-        ]);
-
-        $menu['Xây dựng nhà']->addChild('Xây dựng nhà xưởng', [
-            'route' => 'list_category',
-            'routeParameters' => ['level1' => 'xay-dung', 'level2' => 'xay-dung-nha-xuong']
+        $menu->addChild('Liên hệ', [
+            'route' => 'contact'
         ]);
 
         return $menu;

@@ -26,7 +26,7 @@
                                         <tr>
                                             <td>{{ row.getName() }}</td>
                                             <td>{{ row.getPhone() }}</td>
-                                            <td>{{ row.getCreatedAt() | localizeddate('medium', 'short', null, 'Asia/Ho_Chi_Minh', 'd/M/YYYY') }}</td>
+                                            <td>{{ row.getCreatedAt() | localizeddate('medium', 'short', null, 'Asia/Ho_Chi_Minh', 'd/M/yyyy') }}</td>
                                             <td>
                                                 <div class="item-actions">
                                                     {{ include('admin/contact/show.html.twig', {object: row}, with_context = false) }}

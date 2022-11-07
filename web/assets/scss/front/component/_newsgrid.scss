@@ -34,6 +34,7 @@
     }
 
     .block-underline {
+        margin: 0 auto;
         width: 250px;
         height: 3px;
         background: $black_2;
@@ -72,6 +73,7 @@
                 display: inline-block;
                 overflow: hidden;
                 position: relative;
+                width: 100%;
 
                 @media only screen and (max-width: 980px) {
                     height: 168px;
@@ -94,6 +96,7 @@
     
             .news-body {
                 display: inline-block;
+                min-height: 82px;
                 width: 100%;
                 padding: 10px;
 

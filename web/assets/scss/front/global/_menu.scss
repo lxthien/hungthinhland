@@ -1,24 +1,9 @@
-@media screen and (min-width:768px){
-    .navbar-brand-centered {
-        position: absolute;
-        left: 43.5%;
-        display: block;
-        width: 160px;
-        text-align: center;
-
-        @media only screen and (max-width: 990px) {
-            left: 40%;
-        }
-    }
-
-    .navbar>.container .navbar-brand-centered, 
-    .navbar>.container-fluid .navbar-brand-centered {
-        margin-left: -80px;
-    }
-}
-
 #nav {
     z-index: 10000;
+    position: fixed;
+    opacity: .8;
+    background: $white;
+    width: 100%;
 
     .nav-container {
         position: relative;
@@ -42,21 +27,11 @@
             padding-top: 0px;
             justify-content: left;
             min-height: auto;
-
-            #search {
-                position: absolute;
-                z-index: 100;
-
-                @media only screen and (min-width: 1200px) {
-                    display: none !important;
-                }
-            }
     
             .navbar-header {
                 .navbar-brand {
-                    padding: 5px 0;
+                    padding: 15px 50px;
                     height: auto;
-                    margin-top: -9px;
 
                     @media only screen and (max-width: 767.98px) {
                         padding: 4px 0;
@@ -167,7 +142,7 @@
                     }
     
                     a {
-                        padding: 39px 12px;
+                        padding: 39px 50px;
                         font-size: 18px;
                         text-transform: uppercase;
                         font-family: $firaSansCondensedBold;
@@ -297,7 +272,7 @@
 
         .nav-container .navbar {
             .navbar-header .navbar-brand {
-                padding: 5px 0;
+                padding: 13px 35px;
                 margin-top: 0;
 
                 img {
@@ -311,7 +286,7 @@
 
             .navbar-collapse {
                 ul li a {
-                    padding: 20px 15px;
+                    padding: 20px 50px;
 
                     @media only screen and (max-width: 767.98px) {
                         padding: 10px;

@@ -12,7 +12,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <div class="navbar-brand navbar-brand-centered">
+                            <div class="navbar-brand navbar-brand-left">
                                 <a href="{{ path('homepage') }}" title="{{ get_setting('siteName') }}">
                                     <img alt="{{ get_setting('siteName') }}" src="{{ asset('assets/images/logo.png') }}" width="130" height="98" >
                                 </a>
@@ -23,22 +23,10 @@
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                        <div class="collapse navbar-collapse">
                             {{ knp_menu_render('AppBundle:Builder:mainMenu', {
                                 'allow_safe_labels': true,
                             })|raw }}
-                            {{ knp_menu_render('AppBundle:Builder:mainMenuRight', {
-                                'allow_safe_labels': true,
-                            })|raw }}
-                        </div>
-
-                        <div class="collapse navbar-collapse hidden-lg" id="search">
-                            <form action="{{ path('news_search') }}" method="get" id="form-search">
-                                <div class="form-group">
-                                    <input name="q" type="text" class="form-control search-field" placeholder="{{ 'search'|trans }}" autocomplete="off">
-                                    <button type="submit">Search</button>
-                                </div>
-                            </form>
                         </div>
                         <!-- /.container-fluid -->
                     </nav>

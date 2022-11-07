@@ -46,7 +46,7 @@
                                         <td><a class="btn-link" href="{{ path('admin_newscategory_edit', {id: row.id}) }}">{{ row.getName() }}<a></td>
                                         <td>{{ row.getParentcat() }}</td>
                                         <td>{{ row.getUrl() }}</td>
-                                        <td>{{ row.getCreatedAt() | localizeddate('medium', 'none', null, 'Asia/Ho_Chi_Minh', 'd/M/YYYY') }}</td>
+                                        <td>{{ row.getCreatedAt() | localizeddate('medium', 'none', null, 'Asia/Ho_Chi_Minh', 'd/M/yyyy') }}</td>
                                         <td>
                                             <div class="item-actions">
                                                 <a href="{{ path('admin_newscategory_edit', {id: row.id}) }}" class="btn-sm btn-edit">

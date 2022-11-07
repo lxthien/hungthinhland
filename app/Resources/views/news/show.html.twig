@@ -27,7 +27,7 @@
 {% block body %}
     <div class="container wrapper-container wrapper-post-container">
         <div class="row post-container">
-            <div class="col-12 col-md-12 col-lg-8 wrapper-post-container-left">
+            <div class="col-12 col-md-12 col-lg-12 wrapper-post-container-left">
                 {{ include('news/components/breadcrumbs.html.twig') }}
 
                 <article id="post-{{ post.getId() }}" class="news hentry">
@@ -47,15 +47,8 @@
                     </div>
 
                     {{ include('news/components/related.html.twig') }}
-                    
-                    {{ include('news/comments/list.html.twig') }}
-                    
-                    {{ include('news/comments/form.html.twig') }}
                 </article>
             </div>
-
-            {# Side bar #}
-            {{ include('layout/sidebar.html.twig') }}
         </div>
     </div>
 {% endblock %}

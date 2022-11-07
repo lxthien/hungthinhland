@@ -1,9 +1,10 @@
 {% if relatedNews|length > 0 %}
     <div class="related-news">
-        <h3>Tin cùng danh mục</h3>
+        <h3 class="text-center">Dự án khác</h3>
+        <span class="block-underline"></span>
         <div class="row">
             {% for row in relatedNews %}
-                <div class="col-xs-6 col-sm-3 col-md-3">
+                <div class="col-xs-6 col-sm-4 col-md-4">
                     <div class="related-wrapper">
                         {% if category is defined %}
                             {% set url = path('news_show', {'slug': row.getUrl(), 'cat': category.getUrl() }) %}
@@ -16,13 +17,12 @@
                                 height="150"
                                 class="img-thumbnail lazyload"
                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                data-src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_406_280') }}"
+                                data-src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_370_243') }}"
                                 alt="{{row.getTitle()}}" >
                         </a>
                         <a class="related-title" href="{{ url }}" title="{{ row.getTitle() }}">
                             <span>{{ row.getTitle() }}</span>
                         </a>
-                        <p>{{ row.getDescription()|slice(0, 85) }}</p>
                     </div>
                 </div>
             {% endfor %}

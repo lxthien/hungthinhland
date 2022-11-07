@@ -16,11 +16,11 @@
                                 srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_768_400') }}"
                                 media="(max-width: 799px)" />
                             <source
-                                srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_650') }}"
+                                srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_833') }}"
                                 media="(min-width: 800px)" />
                             <img
                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                data-src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_650') }}"
+                                data-src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_833') }}"
                                 alt="{{ row.getName() }}"
                                 class="lazyload" />
                         </picture>
@@ -31,11 +31,11 @@
                             srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_768_400') }}"
                             media="(max-width: 799px)" />
                         <source
-                            srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_650') }}"
+                            srcset="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_833') }}"
                             media="(min-width: 800px)" />
                         <img
                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_650') }}"
+                            data-src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('banner_1920_833') }}"
                             alt="{{ row.getName() }}"
                             class="lazyload" />
                     </picture>
@@ -57,5 +57,4 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-    {{ include('layout/marquee.html.twig') }}
 {% endif %}
