@@ -29,10 +29,6 @@ class ContactController extends Controller
             ->add('name', TextType::class, array('label' => 'label.author', 'attr' => array('placeholder' => 'Nhập tên của bạn')))
             ->add('email', EmailType::class, array('label' => 'label.author_email', 'required' => false, 'attr' => array('placeholder' => 'Nhập email của bạn')))
             ->add('phone', TextType::class, array('label' => 'label.phone', 'attr' => array('placeholder' => 'Nhập SĐT của bạn')))
-            ->add('contents', TextareaType::class, array(
-                'label' => 'label.content',
-                'attr' => array('rows' => '7', 'placeholder' => 'Nhập nội dung yêu cầu')
-            ))
             ->add('send', SubmitType::class, array('label' => 'Liên hệ', 'attr' => array('class' => 'btn btn-primary')))
             ->getForm();
 
@@ -69,8 +65,7 @@ class ContactController extends Controller
                                 array(
                                     'name' => $form->get('name')->getData(),
                                     'phone' => $form->get('phone')->getData(),
-                                    'email' => $form->get('email')->getData(),
-                                    'body' => $form->get('contents')->getData()
+                                    'email' => $form->get('email')->getData()
                                 )
                             ),
                             'text/html'

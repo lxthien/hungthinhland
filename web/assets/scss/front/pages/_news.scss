@@ -16,7 +16,7 @@
 ------------------------------------------------------------------------- */
 .wrapper-post-container {
     .post-container {
-        margin-top: 20px;
+        margin-top: 100px;
 
         .news {
             h1 {
@@ -212,96 +212,6 @@
     .rating-message {
         color: $primaryColor;
         margin: 0;
-    }
-}
-
-/* News Related
-------------------------------------------------------------------------- */
-.wrapper-post-container {
-    .post-container {
-        .news {
-            .related-news {
-                h3 {
-                    font-size: 35px;
-                }
-            }
-        }
-    }
-}
-
-.related-news {
-    h3 {
-        position: relative;
-        color: $primaryColor2;
-        font-size: 35px;
-    }
-
-    .row {
-        .related-wrapper {
-            border: 2px solid $primaryColor2;
-            margin-bottom: 30px;
-
-            .img-thumbnail {
-                border-radius: 0px;
-                padding: 0px;
-                border: none;
-                width: 100%;
-                height: 150px;
-                transition: 0.6s ease;
-                padding: 0;
-                border: none;
-
-                @media only screen and (max-width: 767.98px) {
-                    height: auto;
-                }
-            }
-    
-            a.related-title {
-                margin: 12px 0px;
-                padding: 0 8px;
-                font-size: 18px;
-                line-height: 25px;
-                height: 75px;
-                max-height: 75px;
-                color: $primaryColor2;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                font-family: $firaSansCondensedBold;
-
-                &:hover {
-                    text-decoration: none;
-                }
-
-                @media only screen and (max-width: 767.98px) {
-                    font-size: 19px;
-                    line-height: 30px;
-                    padding: 10px 10px 3px;
-                    -webkit-line-clamp: 3;
-                    max-height: max-content;
-                    height: 100px;
-                }
-            }
-
-            p {
-                padding: 0 8px;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                font-size: 16px;
-                line-height: 25px;
-                min-height: 75px;
-                font-family: $firaSansCondensedRegular;
-
-                @media only screen and (max-width: 767.98px) {
-                    padding: 0px 10px;
-                }
-            }
-        }
     }
 }
 

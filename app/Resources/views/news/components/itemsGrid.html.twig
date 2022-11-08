@@ -1,10 +1,10 @@
-<div class="col-xs-6 col-sm-3 col-md-3 news-item">
+<div class="col-xs-6 col-sm-4 col-md-4 news-item">
     <div class="news-item-wrapper">
         <div class="news-thumb">
-            {% set template = 'news_290_250' %}
+            {% set template = 'news_370_243' %}
             {% if category is defined %}
                 {% set url = path('news_show', {'slug': row.getUrl(), 'cat': category.getUrl() }) %}
-                {% set template = category.getTemplate() == null ? 'news_290_250' : category.getTemplate() %}
+                {% set template = category.getTemplate() == null ? 'news_370_243' : category.getTemplate() %}
             {% else %}
                 {% set url = path('news_show', {'slug': row.getUrl() }) %}
             {% endif %}
@@ -30,8 +30,7 @@
             </a>
         </div>
         <div class="news-body">
-            <a title="{{ row.getTitle() }}" href="{{ url }}" title="{{ row.getTitle() }}">{{ row.getTitle() }}</a>
-            <p>{{ row.getDescription()|slice(0, 130) }}</p>
+            <a class="text-center" title="{{ row.getTitle() }}" href="{{ url }}" title="{{ row.getTitle() }}">{{ row.getTitle() }}</a>
         </div>
     </div>
 </div>

@@ -24,7 +24,7 @@
             </a>
         </div>
         <div class="news-body">
-            <a href="{{ path('news_show', {'slug': row.getUrl(), 'cat': category.getUrl() }) }}" title="{{ row.getTitle() }}">{{ row.getTitle() }}</a>
+            <a class="text-center" href="{{ path('news_show', {'slug': row.getUrl(), 'cat': category.getUrl() }) }}" title="{{ row.getTitle() }}">{{ row.getTitle() }}</a>
         </div>
     </div>
 </div>

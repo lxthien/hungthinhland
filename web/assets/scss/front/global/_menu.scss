@@ -298,5 +298,39 @@
                 }
             }
         }
+
+        .pull-right {
+            margin-top: 12px;
+        }
+    }
+}
+
+.pull-right {
+    margin-top: 30px;
+
+    .info-nd {
+        background: $white;
+        border: 2px solid $primaryColor2;
+        padding: 0 15px;
+        border-radius: 30px;
+
+        p {
+            font-size: 20px;
+            line-height: 20px;
+            padding: 5px 0;
+            margin: 0;
+
+            i {
+                color: $primaryColor3;
+            }
+
+            a {
+                color: $primaryColor3;
+
+                &:hover, &:visited, &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }

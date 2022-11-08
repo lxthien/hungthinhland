@@ -5,20 +5,20 @@
     <noscript><link rel="stylesheet" href="{{ asset('build/css/contact.css') }}" ></noscript>
 {% endblock %}
 
-{% block title %}{{ post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle() }}{% endblock %}
-{% block description %}{{ post.getPageDescription() is not null ? post.getPageDescription() : post.getDescription() }}{% endblock %}
-{% block keyword %}{{ post.getPageKeyword() }}{% endblock %}
+{% block title %}{{ post is not null ? (post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle()) : '' }}{% endblock %}
+{% block description %}{{ post is not null ? (post.getPageDescription() is not null ? post.getPageDescription() : post.getDescription()) : '' }}{% endblock %}
+{% block keyword %}{{ post is not null ? post.getPageKeyword() : '' }}{% endblock %}
 
 {% block structuredOpenGraph %}
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle() }}" />
-    <meta property="og:description" content="{{ post.getPageDescription() is not null ? post.getPageDescription() : post.getDescription() }}" />
+    <meta property="og:title" content="{{ post is not null ? (post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle()) : '' }}" />
+    <meta property="og:description" content="{{ post is not null ? (post.getPageDescription() is not null ? post.getPageDescription() : post.getDescription()) : '' }}" />
 {% endblock %}
 
 {% block body %}
     <div class="container contacts wrapper-post-container">
         <div class="row post-container">
-            <div class="col-xs-12 col-sm-12 col-md-8">
+            <div class="col-xs-12 col-sm-12 col-md-12">
                 {{ include('news/components/breadcrumbs.html.twig') }}
                 
                 <div class="company">
@@ -26,19 +26,19 @@
                     <ul>
                         <li>
                             <i class="fa fa-map-marker"></i>
-                            <span><strong>VPGD: {{ get_setting('companyAddress') }}</strong></span>
+                            <span><strong>Địa chỉ: {{ get_setting('companyAddress') }}</strong></span>
                         </li>
                         <li>
                             <i class="fa fa-phone"></i>
-                            <span><strong>{{ get_setting('hotLine1') }}</strong></span>
+                            <span><strong>Hotline: {{ get_setting('hotLine1') }}</strong></span>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span><strong>{{ get_setting('emailContact') }}</strong></span>
+                            <span><strong>Email: {{ get_setting('emailContact') }}</strong></span>
                         </li>
                         <li>
                             <i class="fab fa-internet-explorer"></i>
-                            <span><strong>{{ get_setting('companyWebsite') }}</strong></span>
+                            <span><strong>Website: {{ get_setting('companyWebsite') }}</strong></span>
                         </li>
                         <li>
                             <i class="fab fa-gitkraken"></i>
@@ -62,8 +62,6 @@
                 {{ form_widget(form) }}
                 {{ form_end(form) }}
             </div>
-
-            {{ include('layout/sidebar.html.twig') }}
         </div>
     </div>
 {% endblock %}

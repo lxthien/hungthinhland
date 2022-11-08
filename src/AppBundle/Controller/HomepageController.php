@@ -124,7 +124,7 @@ class HomepageController extends Controller
         $form = $this->createFormBuilder($contact)
             ->setAction($this->generateUrl('homepagecontact'))
             ->add('name', TextType::class, array('label' => 'Tên của bạn'))
-            ->add('email', EmailType::class, array('label' => 'Email của bạn'))
+            ->add('email', EmailType::class, array('label' => 'Email của bạn', 'required' => false))
             ->add('phone', TextType::class, array('label' => 'Số điện thoại'))
             ->add('send', ButtonType::class, array('label' => 'Gửi'))
             ->getForm();

@@ -10,7 +10,6 @@
 {% block keyword %}{{ post.getPageKeyword() }}{% endblock %}
 
 {% block structuredOpenGraph %}
-    <link rel="amphtml" href="{{ url('amp_show', { slug: post.getUrl() }) }}">
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ post.getPageTitle() is not null ? post.getPageTitle() : post.getTitle() }}" />
     <meta property="og:description" content="{{ post.getPageDescription() is not null ? post.getPageDescription() : post.getDescription() }}" />
@@ -22,13 +21,8 @@
 
 {% block body %}
     <div class="container page wrapper-post-container">
-        {{ include('news/components/listPrices.html.twig', {hasContainer:false}) }}
-
         <div class="row post-container">
-            {# Side bar #}
-            {{ include('layout/sidebar.html.twig') }}
-
-            <div class="col-12 col-md-12 col-lg-9 wrapper-post-container-left">
+            <div class="col-12 col-md-12 col-lg-12 wrapper-post-container-left">
                 {# breadcrumbs #}
                 {{ include('news/components/breadcrumbs.html.twig') }}
 
@@ -36,19 +30,8 @@
                     <h1 class="entry-title block-title">{{ post.getTitle() }}</h1>
                     
                     <div class="news-container">
-                        {{ contentsLazy|replace({'0979.274.245':'0904.359.249', '0979.27.42.45':'0904.359.249'})|raw }}
+                        {{ contentsLazy|raw }}
                     </div>
-
-                    {# Rating and Share #}
-                    <div class="rating-share-container">
-                        {{ include('news/components/share.html.twig') }}
-                    </div>
-
-                    {# List comments #}
-                    {{ include('news/comments/list.html.twig') }}
-                    
-                    {# Render form comment #}
-                    {{ include('news/comments/form.html.twig') }}
                 </article>
             </div>
         </div>

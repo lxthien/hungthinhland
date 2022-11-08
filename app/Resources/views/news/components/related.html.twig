@@ -1,31 +1,15 @@
 {% if relatedNews|length > 0 %}
-    <div class="related-news">
-        <h3 class="text-center">Dự án khác</h3>
+    <div class="related-news title-list-news-items">
+        <p class="text-uppercase text-center p-title-news-items">
+            <a href="#" title="Tin khác">Tin khác</a>
+        </p>
         <span class="block-underline"></span>
-        <div class="row">
-            {% for row in relatedNews %}
-                <div class="col-xs-6 col-sm-4 col-md-4">
-                    <div class="related-wrapper">
-                        {% if category is defined %}
-                            {% set url = path('news_show', {'slug': row.getUrl(), 'cat': category.getUrl() }) %}
-                        {% else %}
-                            {% set url = path('news_show', {'slug': row.getUrl() }) %}
-                        {% endif %}
-                        <a title="{{ row.getTitle() }}" href="{{ url }}">
-                            <img
-                                width="212"
-                                height="150"
-                                class="img-thumbnail lazyload"
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                                data-src="{{ (vich_uploader_asset(row, 'imageFile') ? vich_uploader_asset(row, 'imageFile') : asset('assets/images/no-image.png')) | imagine_filter('news_370_243') }}"
-                                alt="{{row.getTitle()}}" >
-                        </a>
-                        <a class="related-title" href="{{ url }}" title="{{ row.getTitle() }}">
-                            <span>{{ row.getTitle() }}</span>
-                        </a>
-                    </div>
-                </div>
-            {% endfor %}
+        <div class="list-news-items">
+            <div class="row">
+                {% for row in relatedNews %}
+                    {{ include('news/components/itemsGrid.html.twig') }}
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div class="clearfix"></div>

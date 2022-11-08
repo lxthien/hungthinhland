@@ -27,6 +27,14 @@
                             {{ knp_menu_render('AppBundle:Builder:mainMenu', {
                                 'allow_safe_labels': true,
                             })|raw }}
+
+                            <div class="collapse navbar-collapse">
+                                <div class="wp90 pull-right">
+                                    <div class="info-nd">
+                                        <p class="tel text-uppercase"><i class="fas fa-mobile"></i> <a href="tel:{{ get_setting('hotLine2') }}">{{ get_setting('hotLine1') }}</a></p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.container-fluid -->
                     </nav>
