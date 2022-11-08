@@ -1,6 +1,7 @@
 'use strict';
 
 require('jquery-validation');
+require('@fancyapps/fancybox');
 
 function intHandleFormComment() {
     window.dataLayer = window.dataLayer || [];
@@ -16,7 +17,11 @@ function intHandleFormComment() {
                 success: function(data) {
                     var response = JSON.parse(data);
                     if (response.status === 'success') {
-                        $('p#comment-response').html(response.message);
+                        $.fancybox.open({
+                            src: response.message,
+                            type : 'html',
+                            touch : false
+                        });
                         
                         window.dataLayer.push({
                             'event': 'subscriber'
@@ -25,7 +30,11 @@ function intHandleFormComment() {
                         // Clear form comment
                         $formComment[0].reset();
                     } else {
-                        $('p#comment-response').html(response.message);
+                        $.fancybox.open({
+                            src: response.message,
+                            type : 'html',
+                            touch : false
+                        });
                     }
                 }
             });

@@ -167,7 +167,8 @@ class HomepageController extends Controller
                 $em->flush();
 
                 if (null !== $contact->getId()) {
-                    $message = \Swift_Message::newInstance()
+                    
+                    /* $message = \Swift_Message::newInstance()
                         ->setSubject($this->get('translator')->trans('comment.email.title', ['%siteName%' => $this->get('settings_manager')->get('siteName')]))
                         ->setFrom(['hotro.xaydungminhduy@gmail.com' => $this->get('settings_manager')->get('siteName')])
                         ->setTo($this->get('settings_manager')->get('emailContact'))
@@ -184,7 +185,7 @@ class HomepageController extends Controller
                         )
                     ;
 
-                    $mailer->send($message);
+                    $mailer->send($message); */
     
                     return new Response(
                         json_encode(

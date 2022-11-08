@@ -55,7 +55,7 @@ class ContactController extends Controller
                     $this->get('translator')->trans('contact.message.success')
                 );
 
-                $message = \Swift_Message::newInstance()
+                /* $message = \Swift_Message::newInstance()
                         ->setSubject($this->get('translator')->trans('contact.email.title', ['%siteName%' => $this->get('settings_manager')->get('siteName')]))
                         ->setFrom(['hotro.xaydungminhduy@gmail.com' => $this->get('settings_manager')->get('siteName')])
                         ->setTo($this->get('settings_manager')->get('emailContact'))
@@ -72,7 +72,7 @@ class ContactController extends Controller
                         )
                     ;
 
-                $mailer->send($message);
+                $mailer->send($message); */
 
                 return $this->redirectToRoute('contact');
             }

@@ -5,6 +5,10 @@
     background: $white;
     width: 100%;
 
+    @media only screen and (max-width: 767.98px) {
+        position: relative;
+    }
+
     .nav-container {
         position: relative;
 
@@ -36,13 +40,13 @@
                     @media only screen and (max-width: 767.98px) {
                         padding: 4px 0;
                         margin-top: 0;
-                        width: 78%;
+                        width: 54%;
                         float: left;
                         text-align: center;
                     }
 
                     @media only screen and (max-width: 990px) {
-                        margin-top: 0;
+                        margin-top: 3px;
                     }
     
                     img {
@@ -55,7 +59,7 @@
                         }
 
                         @media only screen and (max-width: 990px) {
-                            width: 70px;
+                            width: 85px;
                         }
                     }
                 }
@@ -308,17 +312,30 @@
 .pull-right {
     margin-top: 30px;
 
+    @media only screen and (max-width: 767.98px) {
+        margin-top: 15px;
+    }
+
     .info-nd {
         background: $white;
         border: 2px solid $primaryColor2;
         padding: 0 15px;
         border-radius: 30px;
 
+        @media only screen and (max-width: 767.98px) {
+            border: none;
+            padding: 0;
+        }
+
         p {
             font-size: 20px;
             line-height: 20px;
             padding: 5px 0;
             margin: 0;
+
+            @media only screen and (max-width: 767.98px) {
+                font-size: 18px;
+            }
 
             i {
                 color: $primaryColor3;

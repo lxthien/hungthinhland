@@ -8,7 +8,7 @@
         &.required {
             &::after {
                 content: "(*)";
-                color: red;
+                color: $red;
                 margin-left: 5px;
                 font-size: 13px;
             }
@@ -46,7 +46,7 @@
     }
 
     button.btn {
-        background: $primaryColor2;
+        background: $primaryColor3;
         border-width: 0px;
         width: 100px;
         text-transform: uppercase;

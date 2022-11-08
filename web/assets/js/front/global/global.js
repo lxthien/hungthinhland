@@ -120,8 +120,8 @@ exports.init = function () {
     initProtectedContent();
     initGoToTop();
     initFixedMenu();
-    initFancybox();
-    intHandleFormContact();
-    initFlickity();
+    //initFancybox();
+    //intHandleFormContact();
+    //initFlickity();
     initScrollingTabs();
 };

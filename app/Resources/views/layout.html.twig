@@ -41,23 +41,10 @@
         <meta property="fb:app_id" content="{{ get_setting('facebookAppID') }}" />
         <!-- Open Graph data -->
 
-        <!-- Twitter Card data -->
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@namvietphat">
-        <meta name="twitter:title" content="{{ block('title') }}">
-        <meta name="twitter:description" content="{{ block('description') }}">
-        <meta name="twitter:creator" content="@namvietphat">
-        {% block twitterImage %}
-        {% endblock %}
-        <!-- Twitter Card data -->
-
         {% block structuredOrganization %}
         {% endblock %}
 
         {% block structuredWebSite %}
-        {% endblock %}
-
-        {% block structuredPerson %}
         {% endblock %}
 
         {{ get_setting('googleAnalytic')|raw }}

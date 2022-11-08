@@ -54,7 +54,7 @@ class Contact
     /**
      * @var string
      *
-     * @ORM\Column(name="contents", type="text")
+     * @ORM\Column(name="contents", type="text", nullable=true)
      */
     private $contents;
 
