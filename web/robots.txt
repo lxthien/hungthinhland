@@ -2,4 +2,4 @@ User-agent: *
 
 Disallow: /admin
 
-Sitemap: https://www.namvietphatcorp.com/sitemap.xml
+Sitemap: https://hungthinhlandt.com.vn/sitemap.xml
