@@ -1,5 +1,9 @@
 .contacts {
     margin-top: 100px;
+
+    @media only screen and (max-width: 767.98px) {
+        margin-top: 0;
+    }
     
     .company {
         margin-bottom: 30px;
