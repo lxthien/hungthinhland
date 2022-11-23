@@ -1,10 +1,10 @@
 'use strict';
 
 //require('bxslider/dist/jquery.bxslider');
-require('@fancyapps/fancybox');
+//require('@fancyapps/fancybox');
 require('jquery-validation');
-require('../../../libs/lightslider/js/lightslider.js');
-require('../../../libs/jquery/jquery.cookie.js');
+//require('../../../libs/lightslider/js/lightslider.js');
+//require('../../../libs/jquery/jquery.cookie.js');
 require('jquery-bootstrap-scrolling-tabs/dist/jquery.scrolling-tabs.min.js');
 
 function initProtectedContent() {
